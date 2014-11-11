@@ -29,12 +29,19 @@
 
     %section.row
       .columns.small-12.medium-8
+        - flash.each do |name, msg|
+          .alert-box{ class: name == 'notice' ? 'success' : 'warning', data: { alert: true } }
+            - if msg.is_a? Array
+              = msg.join("<br>")
+            - else
+              = msg
+            = link_to '&times;'.html_safe, '#', class: 'close'
         = yield
       .columns.medium-4.hide-for-small
         .panel
-          .text-center= link_to "share a link", new_post_path, class: "button alert medium"
+          .text-center= link_to 'share a link', new_post_path, class: 'button alert medium'
     %footer.fixed
-      %nav.top-bar{ data: { topbar: true }, role: "navigation" }
+      %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
         %p= "&copy; #{Time.now.year} Random Tutorials Productions".html_safe
 
 
