@@ -2,8 +2,14 @@ header {
   .top-bar {
     background: #CEE3F8;
     color: #666;
-    .name h1 a {
-      color: #555
+    .name h1 {
+      img {
+        width: 62%;
+      }
+      a {
+        padding-left: 0;
+        color: #555
+      }
     }
   }
   &+ section {
