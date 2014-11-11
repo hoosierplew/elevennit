@@ -1,18 +1,1 @@
-= form_for @post do |f|
-  = f.hidden_field :post_type
-  .row
-    .small-12.columns= f.label :title
-    .small-12.columns= f.text_field :title, placeholder: "Example: My fancy post!"
-  -if f.object.link?
-    .row.collapse
-      .small-12.columns= f.label :link
-      .small-3.large-2.columns
-        %span.prefix http://
-      .small-9.large-10.columns= f.text_field :link, placeholder: "Example: lmgtfy.com"
-  - elsif f.object.text?
-    .row
-      .small-12.columns= f.label :body
-      .small-12.columns= f.text_area :body, rows: 19
-  .row
-    .small-12.columns
-      = f.submit "Elevennit Up", class: "button medium"
+= render 'form'
