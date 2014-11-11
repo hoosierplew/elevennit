@@ -14,7 +14,7 @@
       %nav.top-bar{ data: { topbar: true }, role: "navigation" }
         %ul.title-area
           %li.name
-            %h1= link_to "Elevennit", "/"
+            %h1= link_to "Elevennit", posts_page
 
         -# %section.top-bar-section
           -# -# Right Nav Section
@@ -32,7 +32,7 @@
         = yield
       .columns.medium-4.hide-for-small
         .panel
-          %h2 Sidebar
+          .text-center= link_to "share a link", new_post_path, class: "button alert medium"
     %footer.fixed
       %nav.top-bar{ data: { topbar: true }, role: "navigation" }
         %p= "&copy; #{Time.now.year} Random Tutorials Productions".html_safe
