@@ -30,11 +30,11 @@
     %section.row
       .columns.small-12.medium-8
         - flash.each do |name, msg|
-          .alert-box{ class: name == 'notice' ? 'success' : 'warning', data: { alert: true } }
+          .alert-box{ class: "#{flash_class name}", data: { alert: true } }
             - if msg.is_a? Array
-              = msg.join("<br>")
+              = msg.join("<br>").html_safe
             - else
-              = msg
+              = msg.html_safe
             = link_to '&times;'.html_safe, '#', class: 'close'
         = yield
       .columns.medium-4.hide-for-small
