@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new( params.require(:post).permit( :title, :link, :body ) )
+    @post = Post.new( params.require(:post).permit( :title, :link, :body, :post_type ) )
     if @post.save
       redirect_to posts_path, flash: { notice: "Thanks for your submission!" }
     else
