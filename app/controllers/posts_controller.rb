@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new( params.require(:post).permit( :title, :link, :body ) )
-    if post.save
+    if @post.save
       redirect_to posts_path
     else
       render :new
