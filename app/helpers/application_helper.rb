@@ -10,4 +10,9 @@ module ApplicationHelper
     end
     alert_type
   end
+
+  def post_link(post)
+    return post.link if post.link?
+    post
+  end
 end
