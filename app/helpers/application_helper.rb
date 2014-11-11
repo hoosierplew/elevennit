@@ -12,7 +12,6 @@ module ApplicationHelper
   end
 
   def post_link(post)
-    return post.link if post.link?
-    post
+    link_to post.title, post.link || post
   end
 end
