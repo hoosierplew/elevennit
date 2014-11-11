@@ -39,7 +39,7 @@
               = msg.html_safe
             = link_to '&times;'.html_safe, '#', class: 'close'
         = yield
-      .columns.medium-4.hide-for-small
+      %sidebar.columns.medium-4.hide-for-small
         .panel
           .text-center= link_to 'new post', new_post_path(post_type: :text), class: 'button alert medium'
           .text-center= link_to 'share a link', new_post_path(post_type: :link), class: 'button secondary small'

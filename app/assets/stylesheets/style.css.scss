@@ -17,6 +17,10 @@ header {
     padding-bottom: 2em;
   }
 }
+sidebar {
+  position: fixed !important;
+  right: 0;
+}
 footer {
   bottom: 0;
   color: #666;
