@@ -1,0 +1,16 @@
+header + section {
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+footer {
+  bottom: 0;
+  color: #FFF;
+  position: fixed;
+  top: inherit !important;
+  width: 100%;
+  .top-bar {
+    background: #555;
+    margin-top: 1em;
+    padding: 0.5em;
+  }
+}
