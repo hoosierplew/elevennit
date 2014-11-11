@@ -1,6 +1,11 @@
-header + section {
-  padding-top: 1em;
-  padding-bottom: 2em;
+header {
+  .top-bar {
+    background: #900;
+  }
+  &+ section {
+    padding-top: 1em;
+    padding-bottom: 2em;
+  }
 }
 footer {
   bottom: 0;
@@ -21,4 +26,7 @@ footer {
     margin-top: 1em;
     padding: 0.5em;
   }
+}
+.panel.alert {
+  background: #900;
 }
