@@ -1,4 +1,25 @@
 header {
+  ul.breadcrumbs {
+    height: 35px;
+    margin-bottom: 0;
+    width: 2000em; /* so overflow works */
+    > *:before {
+      content: "-"
+    }
+    li.with-dropdown * {
+      text-decoration: none !important;
+    }
+    .f-dropdown li {
+      font-size: 0.75rem;
+      line-height: 0.8rem;
+    }
+    .button.dropdown.tiny {
+      font-size: 0.5em;
+      margin-bottom: 0;
+      padding: 0.6em 5em 0.6em 1em;
+      top: -4px;
+    }
+  }
   .top-bar {
     background: #CEE3F8;
     color: #666;
@@ -25,7 +46,7 @@ header {
     }
   }
   &+ section {
-    padding-top: 1em;
+    padding-top: 1.75em;
     padding-bottom: 2em;
   }
 }

@@ -14,4 +14,8 @@ module ApplicationHelper
   def post_link(post)
     link_to post.title, post.link || post
   end
+
+  def sidebar(sidebar_content)
+    content_for(:sidebar) { sidebar_content }
+  end
 end

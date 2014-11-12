@@ -1,2 +1,9 @@
+= sidebar( @category.sidebar )
 .panel
   = render 'category', category: @category
+
+.panel
+  %h3.title Posts in this Category
+  %hr
+  - @category.posts.each do |post|
+    =render 'posts/post', post: post
