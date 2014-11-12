@@ -5,5 +5,7 @@
 .panel
   %h3.title Posts in this Category
   %hr
-  - @category.posts.each do |post|
+  - @posts.each do |post|
     =render 'posts/post', post: post
+  %hr
+  = will_paginate @posts, renderer: FoundationPagination::Rails

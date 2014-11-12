@@ -9,6 +9,10 @@ group :development do
   gem 'binding_of_caller'
 end
 
+#gotsta have that pagination
+gem 'will_paginate'
+gem 'will_paginate-foundation'
+
 # Use HAML for html templates
 gem 'haml'
 gem 'haml-rails'

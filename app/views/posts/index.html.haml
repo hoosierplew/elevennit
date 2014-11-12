@@ -2,3 +2,7 @@
   .panel
     = render 'post', post: post
     = render 'actions', post: post
+%hr
+.columns.small-11.small-centered
+  = will_paginate @posts, renderer: FoundationPagination::Rails
+%br
