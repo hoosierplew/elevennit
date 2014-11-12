@@ -1,8 +1,2 @@
 .panel
-  %h3
-    = post_link(@post)
-    %small.tagline{ title: @post.created_at }= "#{time_ago_in_words @post.created_at} ago"
-
-  %p= @post.body if @post.text?
-  %ul.button-group.edit-buttons
-    %li= link_to 'edit', edit_post_path(@post), class: 'button tiny'
+  = render 'post', post: @post

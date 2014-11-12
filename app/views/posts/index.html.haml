@@ -1,10 +1,3 @@
 - @posts.each do |post|
   .panel
-    %h4.title
-      = post_link(post)
-      %small.tagline{ title: post.created_at }= "#{time_ago_in_words post.created_at} ago"
-    %p= post.body
-    %ul.button-group.edit-buttons
-      %li= link_to 'edit', edit_post_path(post), class: 'button tiny'
-      %li= button_to "delete", post, method: :delete, class: 'destroy button tiny secondary', data: { confirm: "really?" }
-</ul>
+    = render 'post', post: post
