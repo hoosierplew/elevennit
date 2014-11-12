@@ -18,11 +18,12 @@
               %span.left= image_tag "reddit_alien.png"
               %span.left= link_to "Elevennit", posts_url
 
-        -# %section.top-bar-section
-          -# -# Right Nav Section
-          -# %ul.right
-          -#   %li.active
-          -#     %a{ href: "#" } Right Button Active
+        %section.top-bar-section
+          -# Right Nav Section
+          %ul.right
+            %li= link_to 'new post', new_post_path(post_type: :text)
+            %li.divider
+            %li= link_to 'share link', new_post_path(post_type: :link)
           -#
           -# -# Left Nav Section
           -# %ul.left
@@ -40,10 +41,11 @@
             = link_to '&times;'.html_safe, '#', class: 'close'
         = yield
       %sidebar.columns.medium-4.hide-for-small
-        .panel
-          .text-center= link_to 'new post', new_post_path(post_type: :text), class: 'button alert medium'
-          .text-center= link_to 'share link', new_post_path(post_type: :link), class: 'button medium'
-          .text-center= link_to 'create category', new_category_path, class: 'button medium'
+        %ul.pricing-table
+          %li.title Categories
+          - @categories.each do |category|
+            %li.bullet-item= link_to category.name, category
+          %li.cta-button= link_to 'add category', new_category_path, class: 'button tiny secondary'
     %footer.fixed
       %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
         %p= "&copy; #{Time.now.year} Random Tutorials Productions".html_safe
