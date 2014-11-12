@@ -9,9 +9,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def new
+    @categories = Category.all
     @post = Post.new
     @post.post_type = params[:post_type] if params[:post_type].present?
   end
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
   private ##########################################################################################
 
   def post_params
-    params.require(:post).permit( :title, :link, :body, :post_type )
+    params.require(:post).permit( :title, :link, :body, :post_type, :category_id )
   end
 
   def find_post

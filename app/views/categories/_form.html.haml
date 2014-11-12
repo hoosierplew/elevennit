@@ -1,0 +1,19 @@
+= form_for @category do |f|
+  .row
+    .small-12.columns= f.label :name
+    .small-12.columns= f.text_field :name, placeholder: "Adorable Cats"
+  .row
+    .small-12.columns= f.label :title
+    .small-12.columns= f.text_field :title, placeholder: "Example: My fancy category!"
+  .row
+    .small-12.columns= f.label :description
+    .small-12.columns= f.text_area :description
+  .row
+    .small-12.columns= f.label :sidebar
+    .small-12.columns= f.text_field :sidebar, placeholder: "Descriptive text for the sidebar"
+  .row
+    .small-12.columns= f.label :submission_text
+    .small-12.columns= f.text_field :submission_text, placeholder: "I don't know what this is."
+  .row
+    .small-12.columns
+      = f.submit "Elevennit Up", class: "button medium"

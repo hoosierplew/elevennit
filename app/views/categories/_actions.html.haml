@@ -1,0 +1,8 @@
+%ul.button-group.edit-buttons
+  %li= link_to 'edit', edit_category_path(category), class: 'button tiny'
+  %li
+    = button_to "delete",
+                category,
+                method: :delete,
+                class: 'destroy button tiny secondary',
+                data: { confirm: "really?" }

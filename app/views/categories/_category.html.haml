@@ -1,0 +1,7 @@
+%h4.title
+  = link_to category.name, category
+  %small= category.title
+
+%p= category.description if category.description?
+
+= render 'actions', category: category
