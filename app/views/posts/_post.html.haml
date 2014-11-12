@@ -1,5 +1,7 @@
 %h4.title
   = post_link(post)
-  %small.tagline{ title: post.updated_at }= "#{time_ago_in_words post.updated_at} ago"
+  %br.clear
+  %small{ title: post.updated_at }
+    = "#{time_ago_in_words(post.updated_at).capitalize} ago in #{link_to( post.category.name, category_path(post.category) )}".html_safe
 
 %p= post.body if post.text?

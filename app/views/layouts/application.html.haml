@@ -39,7 +39,8 @@
             = link_to '&times;'.html_safe, '#', class: 'close'
         = yield
       %sidebar.columns.medium-4.hide-for-small
-        .panel= yield :sidebar
+        - if content_for?(:sidebar)
+          .panel= yield :sidebar
         .text-center
           = link_to 'new post', new_post_path(post_type: :text), class: 'button small-12'
           = link_to 'share link', new_post_path(post_type: :link), class: 'button small-12'
