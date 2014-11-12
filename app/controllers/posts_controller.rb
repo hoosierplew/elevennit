@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -34,6 +34,16 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if @post.destroy
+      redirect_to posts_path, flash: { notice: "Post Destroyed" }
+    else
+      flash.now[:error] = @post.errors.full_messages
+      render :index
+    end
+  end
+
 
   private ##########################################################################################
 
