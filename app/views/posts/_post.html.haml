@@ -1,5 +1,5 @@
 %h4.title
   = post_link(post)
-  %small.tagline{ title: post.created_at }= "#{time_ago_in_words post.created_at} ago"
+  %small.tagline{ title: post.updated_at }= "#{time_ago_in_words post.updated_at} ago"
 
 %p= post.body if post.text?
