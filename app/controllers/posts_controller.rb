@@ -9,11 +9,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
   end
 
   def new
-    @categories = Category.all
     @post = Post.new
     @post.post_type = params[:post_type] if params[:post_type].present?
   end
