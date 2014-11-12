@@ -1,12 +1,18 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-# 12Factor and Pry are here for developery goodness
+# Developery goodness
 gem 'rails_12factor', group: :production
 gem 'pry-rails', group: [:development, :test]
+group :development do
+  gem "better_errors"
+  gem 'binding_of_caller'
+end
+
 # Use HAML for html templates
 gem 'haml'
 gem 'haml-rails'
+
 # Use Foundation for responsive layouts
 gem 'foundation-rails'
 
