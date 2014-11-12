@@ -6,5 +6,14 @@ class Category < ActiveRecord::Base
   validates :submission_text, length: { maximum: 1024 }
 
   has_many :posts
-  default_scope { order(:name) }
+  default_scope { order('lower(name) ASC') }
+  scope :added_today, -> { where('created_at > ?', Time.now.beginning_of_day) }
+  scope :added_after, -> (time) { where('created_at > ?', time) }
 end
+
+
+# LAMBDA EXAMPLES BELOW
+# class User < ActiveRecord::Base
+#   scope :active, -> { where(active: true) }
+#   scope :admin, -> { where(user_type: 'admin') }
+# end
