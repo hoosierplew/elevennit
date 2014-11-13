@@ -5,6 +5,12 @@
 %h5= comment_link_text(@post.comment_threads.count)
 #comments
   - @post.comment_threads.each do |comment|
-    .panel= comment.body
+    .panel{ id: "reply-#{comment.id}"}
+      = comment.body
+      = link_to 'Reply to this comment',
+                new_comment_path(parent_id: comment.id, format: 'js'),
+                remote: true,
+                class: 'button tiny secondary'
+      %div.reply-form.hide{ id: "reply-form-#{comment.id}" }
 
 = render 'comments/form'

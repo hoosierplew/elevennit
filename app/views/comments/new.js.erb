@@ -1,0 +1,10 @@
+$('#<%= "reply-form-#{@parent.id}" %>')
+  .html('<%= escape_javascript(render 'form', comment: @comment, parent_id: @parent.id) %>')
+  .slideDown(350, function(){
+    $("textarea", this).focus();
+    $(".cancel", this)
+      .show()
+      .on('click', 'button', function(){
+        $(this).parents(".reply-form").slideUp();
+      });
+  });
