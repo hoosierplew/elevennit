@@ -29,9 +29,9 @@
               %span.left= link_to "Elevennit", posts_url
         .right.has-dropdown.user-menu
           - if user_signed_in?
-            = link_to current_user.email, "#", class: 'dropdown', data: { dropdown: 'user-drop' }
+            = link_to current_user.username, "#", class: 'dropdown', data: { dropdown: 'user-drop' }
             %ul#user-drop.f-dropdown{ data: { dropdown: { content: true } } }
-              %li= link_to 'manage account', edit_user_registration_path(current_user)
+              %li= link_to 'manage account', edit_user_registration_path(current_user.id)
               %li= link_to 'logout', destroy_user_session_path, method: :delete
           - else
             = link_to 'login', new_user_session_path

@@ -8,10 +8,14 @@
     .small-12.columns= f.email_field :email, autofocus: true
 
   .row
+    .small-12.columns= f.label :username
+    .small-12.columns= f.text_field :username
+
+  .row
     .small-12.columns
-      = f.label :password
+      = f.label :password, class: 'left'
       - if @validatable
-        %em= "(#{@minimum_password_length characters minimum})"
+        %small.right= "(#{@minimum_password_length characters minimum})"
     .small-12.columns= f.password_field :password, autocomplete: "off"
 
   .row
