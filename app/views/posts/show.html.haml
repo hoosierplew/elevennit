@@ -3,16 +3,9 @@
   = render 'actions', post: @post
 %hr
 .panel
-  %h5 Comments
-  %ol#comments
+  %h5= comment_link_text(@post.comment_threads.count)
+  #comments
     - @post.comment_threads.each do |comment|
-      %li
-        = comment.body
+      .panel= comment.body
 
-= form_for @comment, html: { class: 'comment' } do |f|
-  = f.hidden_field :commentable_type
-  = f.hidden_field :commentable_id
-  %fieldset
-    %legend Add a Comment
-    = f.text_area :body, rows: 12
-    = f.submit "Submit", class: "button small"
+= render 'comments/form'
