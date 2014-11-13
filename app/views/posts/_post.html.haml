@@ -2,6 +2,6 @@
   = post_link(post)
   %br.clear
   %small{ title: post.updated_at }
-    = "#{time_ago_in_words(post.updated_at).capitalize} ago in #{link_to( post.category.name, category_path(post.category) )}".html_safe
+    = "#{time_ago_in_words(post.updated_at).capitalize} ago by #{post.user.username} in #{link_to( post.category.name, category_path(post.category) )}".html_safe
 
 %p= post.body if post.text?

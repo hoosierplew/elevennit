@@ -15,6 +15,9 @@ gem 'devise'
 gem 'will_paginate'
 gem 'will_paginate-foundation'
 
+#Commenting
+gem 'acts_as_commentable_with_threading'
+
 # Use HAML for html templates
 gem 'haml'
 gem 'haml-rails'
