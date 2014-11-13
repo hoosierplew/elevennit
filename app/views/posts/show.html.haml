@@ -1,6 +1,14 @@
 .panel
   = render 'post', post: @post
   = render 'actions', post: @post
+%hr
+.panel
+  %h5 Comments
+  %ol#comments
+    - @post.comment_threads.each do |comment|
+      %li
+        = comment.body
+
 = form_for @comment, html: { class: 'comment' } do |f|
   = f.hidden_field :commentable_type
   = f.hidden_field :commentable_id

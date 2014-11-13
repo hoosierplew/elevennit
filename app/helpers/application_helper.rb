@@ -18,4 +18,8 @@ module ApplicationHelper
   def sidebar(sidebar_content)
     content_for(:sidebar) { sidebar_content }
   end
+
+  def comment_link_text( comment_count )
+    "#{comment_count} #{'comment'.pluralize(comment_count)}"
+  end
 end
