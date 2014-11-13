@@ -1,3 +1,10 @@
 .panel
   = render 'post', post: @post
   = render 'actions', post: @post
+= form_for @comment, html: { class: 'comment' } do |f|
+  = f.hidden_field :commentable_type
+  = f.hidden_field :commentable_id
+  %fieldset
+    %legend Add a Comment
+    = f.text_area :body, rows: 12
+    = f.submit "Submit", class: "button small"
