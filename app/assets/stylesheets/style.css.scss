@@ -32,18 +32,22 @@ header {
         color: #555
       }
     }
-    .top-bar-section li {
-      &.divider {
-        border-right: 1px solid #CEE3F8 !important;
-      }
-      a {
-        background: #EFF7FF !important;
-        color: #777;
-        &:hover {
-          color: #333;
-        }
-      }
+    .user-menu > a {
+      font-size: 0.8em;
+      padding-right: 1em;
     }
+    // .top-bar-section li {
+    //   &.divider {
+    //     border-right: 1px solid #CEE3F8 !important;
+    //   }
+    //   a {
+    //     background: #EFF7FF !important;
+    //     color: #777;
+    //     &:hover {
+    //       color: #333;
+    //     }
+    //   }
+    // }
   }
   &+ section {
     padding-top: 1.75em;

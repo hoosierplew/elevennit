@@ -9,6 +9,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'devise'
+
 #gotsta have that pagination
 gem 'will_paginate'
 gem 'will_paginate-foundation'
