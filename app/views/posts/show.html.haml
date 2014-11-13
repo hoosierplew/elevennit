@@ -4,7 +4,7 @@
 %hr
 %h5= comment_link_text(@post.comment_threads.count)
 #comments
-  - @post.comment_threads.each do |comment|
+  = nested_posts @post.comment_threads, id: 'comments' do |comment|   
     .panel{ id: "reply-#{comment.id}"}
       = comment.body
       = link_to 'Reply to this comment',
